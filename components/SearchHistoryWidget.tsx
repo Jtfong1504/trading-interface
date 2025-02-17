@@ -30,12 +30,16 @@ const SearchHistoryWidget: React.FC<SearchHistoryWidgetProps> = ({ onClose, onSe
   }
 
   const handleMouseMove = (e: React.MouseEvent) => {
-    if (!isDragging) return
-    const newX = e.clientX - position.x
-    const newY = e.clientY - position.y
-    e.currentTarget.style.left = `${newX}px`
-    e.currentTarget.style.top = `${newY}px`
+    if (!isDragging) return;
+    const newX = e.clientX - position.x;
+    const newY = e.clientY - position.y;
+  
+    if (e.currentTarget instanceof HTMLElement) {
+      e.currentTarget.style.left = `${newX}px`;
+      e.currentTarget.style.top = `${newY}px`;
+    }
   }
+  
 
   const handleMouseUp = () => {
     setIsDragging(false)
