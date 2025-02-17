@@ -88,22 +88,19 @@ export default function TradingInterface() {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 to-purple-950">
       {/* Left Sidebar */}
       <div className="fixed left-0 top-0 h-full w-20 bg-gray-900/50 backdrop-blur-sm border-r border-gray-800 flex flex-col items-center py-6 gap-8">
-        <Button variant="ghost" className="w-12 h-12 rounded-xl">
-          <Download className="w-5 h-5" />
-        </Button>
-        <Button variant="ghost" className="w-12 h-12 rounded-xl" onClick={() => setShowAIAnalysis(true)}>
-          <Brain className="w-5 h-5" />
-        </Button>
-        <Button variant="ghost" className="w-12 h-12 rounded-xl">
-          <BarChart2 className="w-5 h-5" />
-        </Button>
-        <Button
-          variant="ghost"
-          className="w-12 h-12 rounded-xl"
-          onClick={() => setShowSearchHistory(!showSearchHistory)}
-        >
-          <Search className="w-5 h-5" />
-        </Button>
+      <Button variant="ghost" className="w-12 h-12 rounded-xl">
+  <Download className="w-5 h-5 text-white" />
+</Button>
+<Button variant="ghost" className="w-12 h-12 rounded-xl" onClick={() => setShowAIAnalysis(true)}>
+  <Brain className="w-5 h-5 text-purple-400" />
+</Button>
+<Button variant="ghost" className="w-12 h-12 rounded-xl">
+  <BarChart2 className="w-5 h-5 text-white" />
+</Button>
+<Button variant="ghost" className="w-12 h-12 rounded-xl" onClick={() => setShowSearchHistory(!showSearchHistory)}>
+  <Search className="w-5 h-5 text-purple-400" />
+</Button>
+
       </div>
 
       {/* Right Sidebar */}
@@ -172,17 +169,10 @@ export default function TradingInterface() {
       )}
 
       {/* Footer */}
-      <footer className="fixed bottom-0 left-20 right-20 p-4 flex justify-between items-center text-sm text-gray-400">
-        <div>© 2025 · Licensing</div>
-        <div className="flex gap-4">
-          <Button variant="outline" size="sm" className="text-gray-400 border-gray-700">
-            Login
-          </Button>
-          <Button size="sm" className="bg-[#9945FF] hover:bg-[#7a3ac4] text-white">
-            Sign Up
-          </Button>
-        </div>
-      </footer>
+      <footer className="fixed bottom-0 left-20 right-20 p-4 flex items-center text-sm text-gray-400">
+  <div>© 2025 · Solacle · Licensing</div>
+</footer>
+
     </div>
   )
 }
