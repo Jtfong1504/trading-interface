@@ -51,7 +51,7 @@ export default function TradingInterface() {
 
       // Update search history
       const history = JSON.parse(localStorage.getItem("searchHistory") || "[]")
-      const updatedHistory = [address, ...history.filter((item) => item !== address)].slice(0, 5)
+      const updatedHistory = [address, ...history.filter((item: string) => item !== address)].slice(0, 5)
       localStorage.setItem("searchHistory", JSON.stringify(updatedHistory))
     } catch (error) {
       console.error("Error fetching token data:", error)
