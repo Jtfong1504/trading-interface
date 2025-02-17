@@ -155,9 +155,13 @@ const AIAnalysisWidget: React.FC<AIAnalysisWidgetProps> = ({ onClose, tokenAddre
     if (!isDragging) return
     const newX = e.clientX - position.x
     const newY = e.clientY - position.y
-    e.currentTarget.style.left = `${newX}px`
-    e.currentTarget.style.top = `${newY}px`
+  
+    // Cast currentTarget to HTMLElement to access style property
+    const target = e.currentTarget as HTMLElement
+    target.style.left = `${newX}px`
+    target.style.top = `${newY}px`
   }
+  
 
   const handleMouseUp = () => {
     setIsDragging(false)
