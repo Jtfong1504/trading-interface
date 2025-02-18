@@ -59,13 +59,13 @@ export async function POST(req: Request) {
     // Format token data for analysis
     const pair = dexScreenerData.pairs[0];
     const tokenData = {
-      token: pair.baseToken.symbol,
-      price: pair.priceUsd,
-      volume24h: pair.volume.h24,
-      liquidity: pair.liquidity.usd,
-      priceChange24h: pair.priceChange.h24,
+      token: pair.baseToken?.symbol ?? "Unknown",
+      price: pair.priceUsd ?? "N/A",
+      volume24h: pair.volume?.h24 ?? "N/A",
+      liquidity: pair.liquidity?.usd ?? "N/A",
+      priceChange24h: pair.priceChange?.h24 ?? "N/A",
       marketCap: pair.marketCap ?? "N/A",
-      dex: pair.dexId,
+      dex: pair.dexId ?? "Unknown",
     };
 
     // Analysis prompt
